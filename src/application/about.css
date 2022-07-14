@@ -1,0 +1,24 @@
+.root{
+	-fx-background-color: #C9A472;		
+}
+
+#mySeparator{
+	-fx-background-color: #D6D582;
+	
+}
+
+.label{
+	-fx-font-family: "Comic Sans MS";
+}
+
+#labelOne{
+	-fx-font-weight: bold;
+	-fx-font-family: "Comic Sans MS";
+	-fx-font-size: 14;
+}
+
+#labelTwo{
+	-fx-font-weight: bold;
+	-fx-font-family: "Comic Sans MS";
+	-fx-font-size: 14;
+}

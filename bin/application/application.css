@@ -1,0 +1,40 @@
+.root{
+	-fx-background-color: #CCB494;	
+}
+
+.label{
+	-fx-font-family: "Comic Sans MS";
+}
+
+.button {
+    -fx-background-color:
+        linear-gradient(#C9A472, #C9A472),
+        radial-gradient(center 50% -40%, radius 200%, #C9A472 45%, #C9A472 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #1F2023;
+    -fx-font-size: 14;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-border-width: 2;
+	-fx-border-color: black;
+    
+}
+.button:hover {
+    -fx-background-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #D6D582 0%, #D6D582 100%),
+        #D6D582,
+        #D6D582,
+        radial-gradient(center 50% 50%, radius 100%, #D6D582, #D6D582);   
+}
+.button:pressed {
+    -fx-padding: 0.5 0.5 0.5 0.5;   
+}
+
+#gPane{
+	-fx-border-width: 2;
+	-fx-border-color: black; 
+	-fx-background-color: #A07855FF;
+}
+
