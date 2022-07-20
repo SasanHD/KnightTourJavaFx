@@ -60,10 +60,10 @@ public class Controller {
 	int[] horizontal = {2,1,-1,-2,-2,-1,1,2};
 	int[] vertical = {-1,-2,-2,-1,1,2,2,1};
 			
-	//Knight's position is 1
+	//Knight's position is 1.
 	int knightPosition=1;
 	
-	//Current row and column set to 0
+	//Current row and column set to 0.
 	int currentRow=0;
 	int currentColumn=0;
 	
@@ -110,7 +110,7 @@ public class Controller {
 						++knightPosition;
 						chessBoard[currentRow][currentColumn]= knightPosition;
 						
-					    //Platform.runLater(() -> System.out.print(""));
+					    //delay before moving knight on the board.
 				        try {Thread.sleep(750);} catch (InterruptedException ex) { ex.printStackTrace();}
 				        Platform.runLater(() -> updateBoard());
 						
@@ -125,11 +125,10 @@ public class Controller {
 						//Increment the iteration variable.
 						++tries;
 						
-					}while(tries!=64);
+					}while(tries!=64); //64 indicates maximum number to reach a full tour.
 					
 					Platform.runLater(() -> startButton.setDisable(true));
-					Platform.runLater(() -> setButton.setDisable(false));
-					
+					Platform.runLater(() -> setButton.setDisable(false));			
 					Platform.runLater(() -> tourLabel.setText("The tour ended with "+(tries+1)+" moves!"));
 					
 				
@@ -237,7 +236,7 @@ public class Controller {
 				currentRow -= vertical [move] ;
 				currentColumn -= horizontal [move] ;
 			}
-		}
+		} //end for-loop.
 	}
 	
 	public void updateBoard() {
@@ -324,7 +323,7 @@ public class Controller {
 		label67.setText(String.valueOf(chessBoard[7][6]));
 		label77.setText(String.valueOf(chessBoard[7][7]));
 			
-		//Mark beginning and ending position of the Knight with ♞
+		//Mark beginning and ending position of the Knight with a '♞'.
 		if(currentRow==0 && currentColumn==0) {
 				label00.setText("♞");
 			}else if(currentRow==0 && currentColumn==1) {
