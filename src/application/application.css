@@ -1,15 +1,22 @@
 .root{
-	-fx-background-color: #CCB494;	
+	-fx-background-color: #edf3f7;	
 }
 
 .label{
 	-fx-font-family: "Comic Sans MS";
 }
 
+.check-box {
+
+-fx-font-family: "Comic Sans MS";
+-fx-font-weight: bold;
+
+}
+
 .button {
     -fx-background-color:
-        linear-gradient(#C9A472, #C9A472),
-        radial-gradient(center 50% -40%, radius 200%, #C9A472 45%, #C9A472 50%);
+        linear-gradient(#6db3e8, #6db3e8),
+        radial-gradient(center 50% -40%, radius 200%, #6db3e8 45%, #6db3e8 50%);
     -fx-background-radius: 6, 5;
     -fx-background-insets: 0, 1;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
@@ -23,10 +30,10 @@
 }
 .button:hover {
     -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #D6D582 0%, #D6D582 100%),
+        linear-gradient(from 0% 93% to 0% 100%, #dceefc 0%, #dceefc 100%),
         #D6D582,
         #D6D582,
-        radial-gradient(center 50% 50%, radius 100%, #D6D582, #D6D582);   
+        radial-gradient(center 50% 50%, radius 100%, #dceefc, #dceefc);   
 }
 .button:pressed {
     -fx-padding: 0.5 0.5 0.5 0.5;   
@@ -35,6 +42,6 @@
 #gPane{
 	-fx-border-width: 2;
 	-fx-border-color: black; 
-	-fx-background-color: #A07855FF;
+	-fx-background-color: #6db3e8;
 }
 
