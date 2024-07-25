@@ -115,6 +115,7 @@ public class Controller {
 				startButton.setDisable(true);
 				resetButton.setDisable(false); 
 				heuristicCheckBox.setDisable(true);
+				setButton.setDisable(true); 
 				tries = 1;
 
 				do {
@@ -162,11 +163,19 @@ public class Controller {
 				Platform.runLater(() -> startButton.setDisable(true));
 				Platform.runLater(() -> setButton.setDisable(false));
 				Platform.runLater(() -> resetButton.setDisable(true));
-				Platform.runLater(() -> tourLabel.setText("The tour ended with " + (tries + 1) + " moves!"));
+				Platform.runLater(() -> setButton.setDisable(false)); 
+				
+				if(tries<63) {
+					Platform.runLater(() -> tourLabel.setText("The tour ended with " + (tries + 1) + " moves! This was not a full tour!"));
+				}
+				else {
+					Platform.runLater(() -> tourLabel.setText("The tour ended with " + (tries + 1) + " moves! This was a full tour!"));
+				}
 
 			}).start();
 		}
 		
+		// for the non-heuristic option
 		else if (checked == 0) {
 			
 			// set knight's starting position on the chess board
@@ -180,6 +189,7 @@ public class Controller {
 				startButton.setDisable(true);
 				resetButton.setDisable(false); 
 				heuristicCheckBox.setDisable(true);
+				setButton.setDisable(true); // [test]
 				tries = 1;
 
 				do {
@@ -224,8 +234,14 @@ public class Controller {
 				Platform.runLater(() -> startButton.setDisable(true));
 				Platform.runLater(() -> setButton.setDisable(false));
 				Platform.runLater(() -> resetButton.setDisable(true));
-				Platform.runLater(() -> tourLabel.setText("The tour ended with " + (tries + 1) + " moves!"));
-
+				Platform.runLater(() -> setButton.setDisable(false)); 
+	
+				if(tries<63) {
+					Platform.runLater(() -> tourLabel.setText("The tour ended with " + (tries + 1) + " moves! This was not a full tour!"));
+				}
+				else {
+					Platform.runLater(() -> tourLabel.setText("The tour ended with " + (tries + 1) + " moves! This was a full tour!"));
+				}
 			}).start();			
 		}
 	}
@@ -236,8 +252,11 @@ public class Controller {
 		// set initial values for reset
 		reset = 0;
 		resetButton.setDisable(true);
+	
 		heuristicCheckBox.setDisable(false);
 		heuristicCheckBox.setSelected(false);
+		
+		checked = 0;
 		
 		// initialize chess board values to 0
 		for (int[] row : chessBoard)
@@ -276,7 +295,6 @@ public class Controller {
 		// update the chess board
 		updateBoard();
 		tourLabel.setText("");
-		setButton.setDisable(true);
 		startButton.setDisable(false);
 	}
 
@@ -305,12 +323,17 @@ public class Controller {
 		reset = 1;
 		checked = 0;
 		heuristicCheckBox.setSelected(false);
-		heuristicCheckBox.setDisable(false);		
+		heuristicCheckBox.setDisable(false);	
 	}
 	
 	// if the checkBox is selected
 	public void checkHeuristic(ActionEvent event) { 
-		checked = 1;
+		
+		if (heuristicCheckBox.isSelected()) {
+			checked = 1;
+			} else {
+				checked = 0;
+			}
 	}
 
 	// gets the next best move based on heuristics
